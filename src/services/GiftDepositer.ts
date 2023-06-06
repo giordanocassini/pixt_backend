@@ -1,4 +1,4 @@
-import QrCode from "./QrCode";
+import QrCode from "../entities/QrCode";
 import IDepositer from "./interfaces/IDepositer";
 
 export default class GiftDepositer implements IDepositer {

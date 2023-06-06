@@ -1,4 +1,4 @@
-import IQrCode from "./IQrCode";
+import IQrCode from "../../entities/interfaces/IQrCode";
 
 export default interface IQrCodeGenerator {
     generateQrCode(): IQrCode;

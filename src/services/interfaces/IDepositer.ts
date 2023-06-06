@@ -1,4 +1,4 @@
-import QrCode from "../QrCode";
+import QrCode from "../../entities/QrCode";
 
 export default interface IDepositer {
     deposit(amountOfMoney: number): void;

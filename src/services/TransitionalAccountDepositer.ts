@@ -10,7 +10,7 @@ export default class TranstionalAccountDepositer implements IDepositer {
           TransitionalAccount.getInstance().accountNumber
         } da agencia ${TransitionalAccount.getInstance().accountAgency}`
       );
-      
+       
     } catch (error) {}
   }
 }
