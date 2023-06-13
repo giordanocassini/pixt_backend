@@ -4,9 +4,7 @@ import * as jwt from 'jsonwebtoken';
 export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
   const token = <any>req.header('Authorization')?.replace('Bearer ', '');
 
-  if (!token) {
-    return res.status(401).send('User not loged');
-  }
+  if (!token) return res.status(401).send('User not loged');
 
   let jwtPayLoad;
 

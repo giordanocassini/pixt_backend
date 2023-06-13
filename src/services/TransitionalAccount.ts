@@ -1,4 +1,4 @@
-import Account from "../entities/Account";
+import Account from '../entities/Account';
 
 class TransitionalAccount extends Account {
   private static instance: TransitionalAccount;
@@ -32,7 +32,7 @@ class TransitionalAccount extends Account {
 
   public static getInstance(): TransitionalAccount {
     if (!TransitionalAccount.instance) {
-      TransitionalAccount.instance = new TransitionalAccount(1, 1234, "12345");
+      TransitionalAccount.instance = new TransitionalAccount(1, 1234, '12345');
     }
     return TransitionalAccount.instance;
   }

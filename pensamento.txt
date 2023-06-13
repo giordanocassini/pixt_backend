@@ -1,9 +1,12 @@
-1. pessoa1 deposita dinheiro para dar de presennte a pessoa2 na conta transitória.
-2. pessoa1 escolhe uma senha que será passada a pessoa2 para saque do dinheiro.
-3. qrCode é gerado com informação de quantidade de dinheiro e hash da senha para saque.
-4. pessoa2 le o qrcode, é redirecionada para link onde deve inserir a senha.
-5. senha estando correta, pessoa2 deve insrir sua chave pix.
-6. sistema faz o deposito na conta da pessoa2 atraves da chave pix informada.
+
+1. pessoa 1 cria um usuário com nome, email, senha e uma conta corrente padrão.
+2. pessoa1 faz login no sistema.
+3. pessoa1 clica em gerar PixtCard, abre uma tela onde ela insere quantia de dinheiro e senha para saque.
+4. abre uma nova tela com link/ codigo de deposito na conta transitória da quantia desejada.
+5. deposito confirmado, qrCode é gerado com informação de quantidade de dinheiro e hash da senha para saque.
+6. pessoa2 le o qrcode, é redirecionada para link onde deve inserir a senha.
+7. senha estando correta, pessoa2 deve insrir sua chave pix.
+8. sistema faz o deposito na conta da pessoa2 atraves da chave pix informada.
 
 entities:
 
