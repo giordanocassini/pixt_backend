@@ -4,5 +4,7 @@ export default class QrCode {
   private _user_id!: number;
   private _cashBackAccount_id!: number;
   private _hashedPassword!: string;
+  private _payed!: boolean;
+  private _retrieved!: boolean;
 
 }

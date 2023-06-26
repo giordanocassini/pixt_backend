@@ -2,7 +2,8 @@ export default class Account {
   constructor(
     protected id: number,
     protected number: number,
-    protected agency: string
+    protected agency: string,
+    protected balance: number
   ) {}
 
   get accountId(): number {

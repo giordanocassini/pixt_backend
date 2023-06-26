@@ -1,17 +1,23 @@
-import { Request } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import PixtCardGenerator from '../services/interfaces/PixtCardGenerator';
 import QrCodeGenerator from '../services/QrCodegenerator';
-import TranstionalAccountDepositer from '../services/TransitionalAccountDepositer';
-import IDepositer from '../services/interfaces/IDepositer';
 
 export class PixtCardController {
-  static async createPixtCard(req: Request, res: Response) {
-    const { amountOfMoney, password, cashBackAccount_id } = req.body;
-    const depositer: IDepositer = new TranstionalAccountDepositer();
+  static async createPixtCard(req: Request, res: Response, next: NextFunction) {
+    const { amountOfMoney, hashedPassword, cashBackAccount_id } = req.body; // this might not come on body after validation middleware
+    const user = req.user; //chatgpt diz q dá pq checkJwt passa esse parametro
     try {
-      await depositer.deposit(amountOfMoney);
       const generator: PixtCardGenerator = new QrCodeGenerator();
-      return res.status(200).send(generator.generatePixtCard(amountOfMoney, password, cashBackAccount_id, req.user.id)));
+      // bd logic
+      res.locals.pixtCard_id = 'some number' // change after bd logic implemented
+      next();
     } catch (error) {}
+  }
+
+  static async getPixtCardbyId(){
+
+  }
+  static async editPixtCard(pixtCard_id: number){
+
   }
 }

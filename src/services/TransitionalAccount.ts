@@ -1,14 +1,14 @@
 import Account from '../entities/Account';
 
-class TransitionalAccount extends Account {
+export default class TransitionalAccount extends Account {
   private static instance: TransitionalAccount;
 
-  private constructor(id: number, number: number, agency: string) {
-    super(id, number, agency);
+  private constructor(id: number, number: number, agency: string, balance: number) {
+    super(id, number, agency, balance);
     // TransitionalAccount initialization logic
   }
 
-  /* get accountId(): number {
+  get accountId(): number {
     return this.id;
   }
 
@@ -28,14 +28,17 @@ class TransitionalAccount extends Account {
 
   set accountAgency(value: string) {
     this.agency = value;
-  } */
+  }
+
+  get accountBalance(): number {
+    return this.balance;
+  }
 
   public static getInstance(): TransitionalAccount {
     if (!TransitionalAccount.instance) {
-      TransitionalAccount.instance = new TransitionalAccount(1, 1234, '12345');
+      TransitionalAccount.instance = new TransitionalAccount(1, 1234, '12345', 0);
     }
     return TransitionalAccount.instance;
   }
 }
 
-export default TransitionalAccount;
